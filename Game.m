@@ -54,6 +54,24 @@
         [self PlaceTunnel];
     }
     
+    if(TunnelTop.center.x == 30){
+        [self Score];
+    }
+    
+    // wenn Vogel und Hinternis sich berühren
+    if(CGRectIntersectsRect(Bird.frame, TunnelTop.frame)){
+        [self GameOver];
+    }
+    if(CGRectIntersectsRect(Bird.frame, TunnelButtom.frame)){
+        [self GameOver];
+    }
+    if(CGRectIntersectsRect(Bird.frame, Top.frame)){
+        [self GameOver];
+    }
+    if(CGRectIntersectsRect(Bird.frame, Bottom.frame)){
+        [self GameOver];
+    }
+    
 }
 
 -(void)BirdMoving{
@@ -79,10 +97,34 @@
     
 }
 
+-(void)Score{
+    ScoreNumber = ScoreNumber + 5;
+    // wie wollen einen Ineger (%i) darstellen
+    ScoreLabel.text = [NSString stringWithFormat:@"%i", ScoreNumber];
+}
+
 // immer, wenn "irgend wo" geklickt wird
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
     BirdFlight = 30;
+    
+}
+
+-(void)GameOver{
+    
+    if(ScoreNumber > HighScoreNumber){
+        // speichere den Highscore in HighScoreSaved
+        [[NSUserDefaults standardUserDefaults] setInteger:ScoreNumber forKey:@"HighScoreSaved"];
+    }
+
+    // stop Timer/ Gameloop
+    [TunnelMovement invalidate];
+    [BirdMovement invalidate];
+    
+    Exit.hidden = NO;
+    TunnelTop.hidden = YES;
+    TunnelButtom.hidden = YES;
+    Bird.hidden = YES;
     
 }
 
@@ -99,6 +141,12 @@
 {
     TunnelTop.hidden = YES;
     TunnelButtom.hidden = YES;
+    Exit.hidden = YES;
+    ScoreNumber = 0;
+    
+    // Highscore auslesen
+    // wenn HighScoreSaved nicht gefunden ist es 0
+    HighScoreNumber = [[NSUserDefaults standardUserDefaults] integerForKey:@"HighScoreSaved"];
     
     [super viewDidLoad];
     // Do any additional setup after loading the view.
