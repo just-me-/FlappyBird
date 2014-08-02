@@ -93,10 +93,17 @@
                                     <color key="titleColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="StartGame:" destination="8do-TM-PwD" eventType="touchUpInside" id="sFI-e1-rnS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="Bird" destination="duz-pB-ceo" id="D2C-8A-XnN"/>
+                        <outlet property="StartGame" destination="gIl-lg-mYe" id="hvS-Ct-2QB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sNO-35-vP1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

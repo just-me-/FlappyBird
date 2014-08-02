@@ -14,6 +14,46 @@
 
 @implementation Game
 
+-(IBAction)StartGame:(id)sender{
+    
+    //blende das Label aus
+    StartGame.hidden = YES;
+    //rufe alle 0.05s BirdMoving() auf
+    BirdMovement = [NSTimer scheduledTimerWithTimeInterval:0.05 target:self
+                    selector:@selector(BirdMoving) userInfo:nil repeats: YES];
+    
+}
+
+-(void)BirdMoving{
+    
+    // Vogel fällt...
+    Bird.center = CGPointMake(Bird.center.x, Bird.center.y - BirdFlight);
+    
+    BirdFlight = BirdFlight - 5;
+    
+    // falle aber nicht zu schnell...
+    if(BirdFlight < -15){
+        BirdFlight = -15;
+    }
+    
+    // wenn der Vogel steigt, zeige das andere Bild
+    if(BirdFlight > 0){
+        Bird.image = [UIImage imageNamed:@"Bird Up.png"];
+    }
+    // und sonst das fallende Bild
+    if(BirdFlight < 0){
+        Bird.image = [UIImage imageNamed:@"Bird Down.png"];
+    }
+    
+}
+
+// immer, wenn "irgend wo" geklickt wird
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    BirdFlight = 30;
+    
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
