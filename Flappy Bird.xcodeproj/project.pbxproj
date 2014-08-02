@@ -26,6 +26,7 @@
 		1F735F58198CDDE70040C573 /* Bird Up.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F735F53198CDDE70040C573 /* Bird Up.png */; };
 		1F735F59198CDDE70040C573 /* GameBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F735F54198CDDE70040C573 /* GameBackground.png */; };
 		1F735F5A198CDDE70040C573 /* Tunnel.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F735F55198CDDE70040C573 /* Tunnel.png */; };
+		1F735F5D198CE2BA0040C573 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F735F5C198CE2BA0040C573 /* Game.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		1F735F53198CDDE70040C573 /* Bird Up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bird Up.png"; sourceTree = "<group>"; };
 		1F735F54198CDDE70040C573 /* GameBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GameBackground.png; sourceTree = "<group>"; };
 		1F735F55198CDDE70040C573 /* Tunnel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tunnel.png; sourceTree = "<group>"; };
+		1F735F5B198CE2BA0040C573 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = ../Game.h; sourceTree = "<group>"; };
+		1F735F5C198CE2BA0040C573 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Game.m; path = ../Game.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +130,8 @@
 				1F735F24198CDB420040C573 /* Main.storyboard */,
 				1F735F27198CDB420040C573 /* ViewController.h */,
 				1F735F28198CDB420040C573 /* ViewController.m */,
+				1F735F5B198CE2BA0040C573 /* Game.h */,
+				1F735F5C198CE2BA0040C573 /* Game.m */,
 				1F735F2A198CDB420040C573 /* Images.xcassets */,
 				1F735F19198CDB420040C573 /* Supporting Files */,
 			);
@@ -272,6 +277,7 @@
 				1F735F29198CDB420040C573 /* ViewController.m in Sources */,
 				1F735F23198CDB420040C573 /* AppDelegate.m in Sources */,
 				1F735F1F198CDB420040C573 /* main.m in Sources */,
+				1F735F5D198CE2BA0040C573 /* Game.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
