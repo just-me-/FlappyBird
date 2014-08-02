@@ -97,12 +97,32 @@
                                     <action selector="StartGame:" destination="8do-TM-PwD" eventType="touchUpInside" id="sFI-e1-rnS"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Tunnel.png" translatesAutoresizingMaskIntoConstraints="NO" id="VOo-D4-TpV">
+                                <rect key="frame" x="247" y="-342" width="53" height="500"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Tunnel.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xdh-zp-96c">
+                                <rect key="frame" x="247" y="264" width="53" height="500"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Tunnel.png" translatesAutoresizingMaskIntoConstraints="NO" id="095-TE-doo">
+                                <rect key="frame" x="0.0" y="546" width="320" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Tunnel.png" translatesAutoresizingMaskIntoConstraints="NO" id="ePp-RW-vue">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="Bird" destination="duz-pB-ceo" id="D2C-8A-XnN"/>
+                        <outlet property="Bottom" destination="095-TE-doo" id="QWe-3b-Gsq"/>
                         <outlet property="StartGame" destination="gIl-lg-mYe" id="hvS-Ct-2QB"/>
+                        <outlet property="Top" destination="ePp-RW-vue" id="t1S-HD-MVw"/>
+                        <outlet property="TunnelButtom" destination="Xdh-zp-96c" id="6ZB-er-84f"/>
+                        <outlet property="TunnelTop" destination="VOo-D4-TpV" id="LvV-oD-TWQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sNO-35-vP1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -114,6 +134,7 @@
         <image name="Background.png" width="320" height="480"/>
         <image name="Bird Up.png" width="40" height="40"/>
         <image name="GameBackground.png" width="320" height="480"/>
+        <image name="Tunnel.png" width="50" height="100"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

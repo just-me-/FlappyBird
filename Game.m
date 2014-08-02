@@ -16,11 +16,43 @@
 
 -(IBAction)StartGame:(id)sender{
     
+    TunnelTop.hidden = NO;
+    TunnelButtom.hidden = NO;
+    
     //blende das Label aus
     StartGame.hidden = YES;
     //rufe alle 0.05s BirdMoving() auf
     BirdMovement = [NSTimer scheduledTimerWithTimeInterval:0.05 target:self
                     selector:@selector(BirdMoving) userInfo:nil repeats: YES];
+    // Methodenaufruf
+    [self PlaceTunnel];
+    
+    TunnelMovement = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self
+                      selector:@selector(TunnelMoving) userInfo:nil repeats: YES];
+    
+}
+
+-(void)PlaceTunnel{
+    
+    RandomTopTunnelPosition = arc4random() %350;
+    RandomTopTunnelPosition = RandomTopTunnelPosition - 228;
+    RandomButtonTunnelPosition = RandomTopTunnelPosition + 655;
+    
+    TunnelTop.center = CGPointMake(340, RandomTopTunnelPosition);
+    TunnelButtom.center = CGPointMake(340, RandomButtonTunnelPosition);
+    
+    
+}
+
+-(void)TunnelMoving{
+    // beweg dich nach links - Näherung dem Vogel
+    TunnelTop.center = CGPointMake(TunnelTop.center.x -1, TunnelTop.center.y);
+    TunnelButtom.center = CGPointMake(TunnelButtom.center.x -1, TunnelButtom.center.y);
+    
+    // wenn ganz links; aus dem Spiel
+    if(TunnelTop.center.x < -28){
+        [self PlaceTunnel];
+    }
     
 }
 
@@ -65,6 +97,9 @@
 
 - (void)viewDidLoad
 {
+    TunnelTop.hidden = YES;
+    TunnelButtom.hidden = YES;
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
